@@ -14,6 +14,8 @@ import moment from 'moment';
 // Make sure to import the CSS for react-big-calendar
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
+const GET_WAITLIST_LINK = 'https://getwaitlist.com/waitlist/20172';
+
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState('marketplace');
 
@@ -140,6 +142,10 @@ const LandingPage = () => {
     </div>
   );
 
+  const handleWaitlistClick = () => {
+    window.open(GET_WAITLIST_LINK, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -177,7 +183,10 @@ const LandingPage = () => {
                 Unify your sales channels with a single source of truth for
                 inventory. No complexity, just results.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition flex items-center mx-auto">
+              <button
+                className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition flex items-center mx-auto"
+                onClick={handleWaitlistClick}
+              >
                 Join the Waitlist <ArrowRight className="ml-2" />
               </button>
             </div>
@@ -265,7 +274,10 @@ const LandingPage = () => {
                   notified when we launch and receive exclusive early-bird
                   pricing.
                 </p>
-                <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
+                <button
+                  className="w-full bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition"
+                  onClick={handleWaitlistClick}
+                >
                   Join the Waitlist
                 </button>
               </div>
@@ -333,7 +345,10 @@ const LandingPage = () => {
               Join our waitlist and be the first to know when AlliedEcom
               launches.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+            <button
+              onClick={handleWaitlistClick}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            >
               Sign Up for Early Access
             </button>
           </div>
